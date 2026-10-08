@@ -22,8 +22,8 @@ define('UPLOAD_DIR', __DIR__ . '/../uploads');
 define('UPLOAD_URL', SITE_URL . '/uploads');
 
 // reCAPTCHA v3 — leave empty to disable. Configure at https://www.google.com/recaptcha/admin
-define('RECAPTCHA_SITE_KEY',   '');
-define('RECAPTCHA_SECRET_KEY', '');
+define('RECAPTCHA_SITE_KEY',   '6Lf23uUtAAAAALFJZivFIwQUwBHDxiW29r4iWW_k');
+define('RECAPTCHA_SECRET_KEY', '6Lf23uUtAAAAADODhA8FGcHFv6xR2rGLANiGOe8a');
 define('RECAPTCHA_MIN_SCORE',  0.5);
 
 // Google Analytics 4 — leave empty to disable. Format: G-XXXXXXXXXX

@@ -166,9 +166,9 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
-('about_text', 'Wakulima Maendeleo Group is a community-based farmers\' group committed to empowering smallholder farmers through collective action, sustainable agriculture, financial inclusion, and community development.'),
+('about_text', 'Malezi na Watoto is a community-based farmers\' group committed to empowering smallholder farmers through collective action, sustainable agriculture, financial inclusion, and community development.'),
 ('contact_address', 'Wakulima Agri-Food Company Ltd\nMwanza, Tanzania'),
-('contact_email', 'info@wakulima.co.tz'),
+('contact_email', 'info@watoto.co.tz'),
 ('contact_email_2', 'wakulimatzltd@gmail.com'),
 ('contact_map_query', 'Mwanza, Tanzania'),
 ('contact_phone', '+255 767 362 220'),
@@ -179,7 +179,7 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('recaptcha_min_score', ''),
 ('recaptcha_secret_key', '6LdITdMtAAAAAFl0fKPE5wgHw6jqv2jdlTuJOWBm'),
 ('recaptcha_site_key', '6LdITdMtAAAAAP5jAkgyt68eVJ5Q3DGUYUvSbS36'),
-('site_name', 'Wakulima Maendeleo Group'),
+('site_name', 'Malezi na Watoto'),
 ('site_tagline', 'Empowering farmers through collective action'),
 ('twitter_url', ''),
 ('vision_text', 'A prosperous and resilient farming community where farmers have the knowledge, resources, and opportunities to improve their livelihoods and build a better future.');
