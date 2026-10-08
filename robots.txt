@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /lang/
+Disallow: /install.php
+Disallow: /create-superadmin.php
+Disallow: /lang-switch.php
+Disallow: /newsletter-subscribe.php
+Disallow: /newsletter-unsubscribe.php
+Disallow: /uploads/
+
+Sitemap: https://wakulima.basketub.cz/sitemap.xml

@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"E:\\\\Work\\\\www\\\\wakulima\")",
+      "Bash(unzip -p \"WMG WEBSITE.docx\" word/document.xml)",
+      "Bash(mkdir -p \"E:/Work/www/wakulima/admin/includes\" \"E:/Work/www/wakulima/includes\" \"E:/Work/www/wakulima/assets/css\" \"E:/Work/www/wakulima/assets/js\" \"E:/Work/www/wakulima/assets/images\" \"E:/Work/www/wakulima/uploads/gallery\" \"E:/Work/www/wakulima/uploads/posts\" \"E:/Work/www/wakulima/uploads/programs\" \"E:/Work/www/wakulima/uploads/members\")",
+      "Bash(cp \"E:/Work/www/wakulima/logo/wakulima_logo.jpeg\" \"E:/Work/www/wakulima/assets/images/wakulima_logo.jpeg\")",
+      "Bash(cp \"E:/Work/www/wakulima/logo/wakulima_logo_bw.jpeg\" \"E:/Work/www/wakulima/assets/images/wakulima_logo_bw.jpeg\")",
+      "Bash(grep -oE '\"[a-zA-Z_-]+\":\\\\s*\"[^\"]{5,80}\"' \"E:/Work/www/wakulima/index.html\")",
+      "Bash(grep -oE 'font-family:[^\"]{5,80}|background:\\\\s*[^;\"]{5,50}|color:\\\\s*#[0-9a-fA-F]{3,6}' \"E:/Work/www/wakulima/index.html\")",
+      "Bash(php -v)",
+      "Bash(python3 *)",
+      "Bash(magick -version)",
+      "Bash(python -c \"from PIL import Image; print\\('PIL ok'\\)\")",
+      "Bash(python -c \"import pillow_heif; print\\('heif ok'\\)\")",
+      "Bash(python -m pip install pillow-heif)",
+      "Bash(python assets/fotos/_convert.py)",
+      "Bash(python *)"
+    ]
+  }
+}

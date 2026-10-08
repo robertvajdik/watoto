@@ -1,0 +1,64 @@
+# Malezi na Watoto
+DirectoryIndex index.php index.html
+
+# Custom 404
+ErrorDocument 404 /404.php
+
+# Deny access to sensitive files
+<FilesMatch "\.(sql|md|log|env|ini|py|docx|txt|HEIC|heic|bak|json)$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "^(robots\.txt)$">
+    Require all granted
+</FilesMatch>
+
+# One-off setup scripts — never reachable over HTTP. To run one in the
+# browser, temporarily remove its name from this list, then put it back.
+<FilesMatch "^(install|create-superadmin|gen-superadmin-sql)\.php$">
+    Require all denied
+</FilesMatch>
+
+# ── Pretty URLs (no .php extension) ──
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    Options -MultiViews
+
+    # Deny direct access to includes / lang, and pretty-URL for sitemap.xml
+    RewriteRule ^(includes|lang|install)/ - [F,L]
+    RewriteRule ^assets/fotos/ - [F,L]
+    RewriteRule (^|/)\.(?!well-known/) - [F,L]
+    RewriteRule ^admin/includes/ - [F,L]
+
+    # Serve static sitemap.xml if present, otherwise fall through to sitemap.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+    # 1) Redirect /index.php or /index → /
+    RewriteCond %{THE_REQUEST} \s/+index(\.php)?[\s?] [NC]
+    RewriteRule ^ / [R=301,L,NE]
+
+    # 2) Redirect external .php URLs (e.g. /about.php → /about)
+    RewriteCond %{THE_REQUEST} \s/+([^\s?]+)\.php([\s?]) [NC]
+    RewriteRule ^ /%1 [R=301,L,NE]
+
+    # 3) Serve extensionless URLs from the matching .php file
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+?)/?$ $1.php [L]
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript text/xml text/plain image/svg+xml
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg   "access plus 30 days"
+    ExpiresByType image/png    "access plus 30 days"
+    ExpiresByType image/webp   "access plus 30 days"
+    ExpiresByType text/css     "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+</IfModule>

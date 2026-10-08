@@ -1,0 +1,6 @@
+# Prevent executing PHP inside /uploads
+<FilesMatch "\.(php|phtml|phar|py|pl|cgi)$">
+    Require all denied
+</FilesMatch>
+Options -ExecCGI
+AddType text/plain .php .phtml .phar .py .pl .cgi
