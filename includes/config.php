@@ -16,7 +16,7 @@ $_wmg_https = (
     || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https')
     || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)
 );
-define('SITE_URL', ($_wmg_https ? 'https' : 'http') . '://wakulima.basketub.cz'); // no trailing slash
+define('SITE_URL', ($_wmg_https ? 'https' : 'http') . '://watoto.basketub.cz'); // no trailing slash
 unset($_wmg_https);
 define('UPLOAD_DIR', __DIR__ . '/../uploads');
 define('UPLOAD_URL', SITE_URL . '/uploads');

@@ -10,4 +10,4 @@ Disallow: /newsletter-subscribe.php
 Disallow: /newsletter-unsubscribe.php
 Disallow: /uploads/
 
-Sitemap: https://wakulima.basketub.cz/sitemap.xml
+Sitemap: https://watoto.basketub.cz/sitemap.xml
